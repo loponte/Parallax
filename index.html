@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Loponte Parallax</title>
+        <meta name="description" content="Um site desenvolvido para estudo em javascript">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <header>
+            <a href="#" class="logo">logo<br></a>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Trabalho</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </header>
+        <section>
+            <img src="images/stars.png" id="stars">
+            <img src="images/moon.png" id="moon">
+            <img src="images/mountains_behind.png" id="mountains_behind">
+            <h2 id="text">Moon Light</h2>
+            <a href="#sec" id="btn">Explore</a>
+            <img src="images/mountains_front.png" id="mountains_front">
+        </section>
+        <div class="sec" id="sec">
+            <h2>Efeito Parallax</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi quidem tenetur, numquam distinctio reiciendis labore magni! Ad atque saepe adipisci velit nesciunt eligendi laborum sed, fugit rerum dolore mollitia vero? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam quam ab, repudiandae incidunt, molestias, quisquam harum laudantium quo culpa dolorem dolore impedit sunt voluptatibus rerum! Expedita laborum praesentium architecto reiciendis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ratione quisquam molestias similique assumenda? Excepturi nostrum id molestiae porro distinctio blanditiis temporibus fuga animi natus cumque quisquam, ad, suscipit sunt.<br><br>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi quidem tenetur, numquam distinctio reiciendis labore magni! Ad atque saepe adipisci velit nesciunt eligendi laborum sed, fugit rerum dolore mollitia vero? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam quam ab, repudiandae incidunt, molestias, quisquam harum laudantium quo culpa dolorem dolore impedit sunt voluptatibus rerum! Expedita laborum praesentium architecto reiciendis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ratione quisquam molestias similique assumenda? Excepturi nostrum id molestiae porro distinctio blanditiis temporibus fuga animi natus cumque quisquam, ad, suscipit sunt.<br><br>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi quidem tenetur, numquam distinctio reiciendis labore magni! Ad atque saepe adipisci velit nesciunt eligendi laborum sed, fugit rerum dolore mollitia vero? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam quam ab, repudiandae incidunt, molestias, quisquam harum laudantium quo culpa dolorem dolore impedit sunt voluptatibus rerum! Expedita laborum praesentium architecto reiciendis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ratione quisquam molestias similique assumenda? Excepturi nostrum id molestiae porro distinctio blanditiis temporibus fuga animi natus cumque quisquam, ad, suscipit sunt.<br><br>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi quidem tenetur, numquam distinctio reiciendis labore magni! Ad atque saepe adipisci velit nesciunt eligendi laborum sed, fugit rerum dolore mollitia vero? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam quam ab, repudiandae incidunt, molestias, quisquam harum laudantium quo culpa dolorem dolore impedit sunt voluptatibus rerum! Expedita laborum praesentium architecto reiciendis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ratione quisquam molestias similique assumenda? Excepturi nostrum id molestiae porro distinctio blanditiis temporibus fuga animi natus cumque quisquam, ad, suscipit sunt.<br><br>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi quidem tenetur, numquam distinctio reiciendis labore magni! Ad atque saepe adipisci velit nesciunt eligendi laborum sed, fugit rerum dolore mollitia vero? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam quam ab, repudiandae incidunt, molestias, quisquam harum laudantium quo culpa dolorem dolore impedit sunt voluptatibus rerum! Expedita laborum praesentium architecto reiciendis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis ratione quisquam molestias similique assumenda? Excepturi nostrum id molestiae porro distinctio blanditiis temporibus fuga animi natus cumque quisquam, ad, suscipit sunt.</p>
+        </div>
+
+        <script>
+            let stars = document.getElementById('stars');
+            let moon = document.getElementById('moon');
+            let mountains_behind = document.getElementById('mountains_behind');
+            let text = document.getElementById('text');
+            let btn = document.getElementById('btn');
+            let mountains_front = document.getElementById('mountains_front');
+            let header = document.querySelector('header');
+
+            window.addEventListener('scroll', function(){
+                let value = window.scrollY;
+                stars.style.left = value * 0.25 + 'px';
+                moon.style.top = value * 1.05 + 'px';
+                mountains_behind.style.top = value * 0.5 + 'px';
+                mountains_front.style.top = value * 0 + 'px';
+                text.style.marginRight = value * 4 + 'px';
+                text.style.marginTop = value * 1.5 + 'px';
+                btn.style.marginTop = value * 1.5 + 'px';
+                header.style.top = value * 0.5 + 'px';
+            })
+        </script>
+    </body>
+</html>
